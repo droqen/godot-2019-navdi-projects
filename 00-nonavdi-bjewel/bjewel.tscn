@@ -1,0 +1,144 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://00-nonavdi-bjewel/navdot_xxi.gd" type="Script" id=1]
+[ext_resource path="res://navdi/NavdiFrictionlessJellybean.tres" type="PhysicsMaterial" id=2]
+[ext_resource path="res://00-nonavdi-bjewel/player.gd" type="Script" id=3]
+[ext_resource path="res://00-nonavdi-bjewel/jewels.png" type="Texture" id=4]
+[ext_resource path="res://00-nonavdi-bjewel/bitsy_ani.gd" type="Script" id=5]
+[ext_resource path="res://00-nonavdi-bjewel/jewel.gd" type="Script" id=6]
+
+
+
+
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 3.3485
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 3.53979
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 1.79925, 3.51021 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 3.47887, 1.71957 )
+
+[node name="navdot_xxi" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 76, 68 )
+current = true
+
+[node name="navdot_bank" type="Node" parent="."]
+
+[node name="player" type="RigidBody2D" parent="navdot_bank"]
+position = Vector2( 40, 0 )
+mode = 2
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="navdot_bank/player"]
+texture = ExtResource( 4 )
+vframes = 10
+hframes = 10
+frame = 12
+script = ExtResource( 5 )
+frames = [ 12, 13, 12, 14 ]
+rate = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="navdot_bank/player"]
+visible = false
+position = Vector2( 0, 0.5 )
+shape = SubResource( 1 )
+
+[node name="jewel" type="RigidBody2D" parent="navdot_bank"]
+mode = 2
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="navdot_bank/jewel"]
+texture = ExtResource( 4 )
+vframes = 10
+hframes = 10
+frame = 1
+script = ExtResource( 5 )
+frames = [ 0, 1 ]
+rate = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="navdot_bank/jewel"]
+shape = SubResource( 2 )
+
+[node name="jewelblue" type="RigidBody2D" parent="navdot_bank"]
+position = Vector2( 10, 0 )
+mode = 2
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+script = ExtResource( 6 )
+jewel_id = 1
+
+[node name="Sprite" type="Sprite" parent="navdot_bank/jewelblue"]
+texture = ExtResource( 4 )
+vframes = 10
+hframes = 10
+frame = 11
+script = ExtResource( 5 )
+frames = [ 10, 11 ]
+rate = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="navdot_bank/jewelblue"]
+shape = SubResource( 2 )
+
+[node name="jewelyellow" type="RigidBody2D" parent="navdot_bank"]
+position = Vector2( 20, 0 )
+mode = 2
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+script = ExtResource( 6 )
+jewel_id = 2
+
+[node name="Sprite" type="Sprite" parent="navdot_bank/jewelyellow"]
+texture = ExtResource( 4 )
+vframes = 10
+hframes = 10
+frame = 21
+script = ExtResource( 5 )
+frames = [ 20, 21 ]
+rate = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="navdot_bank/jewelyellow"]
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="navdot_bank/jewelyellow"]
+position = Vector2( 1.73331, 0 )
+shape = SubResource( 3 )
+
+[node name="WALL" type="RigidBody2D" parent="navdot_bank"]
+position = Vector2( 30, 0 )
+mode = 2
+physics_material_override = ExtResource( 2 )
+gravity_scale = 0.0
+script = ExtResource( 6 )
+jewel_id = 3
+
+[node name="Sprite" type="Sprite" parent="navdot_bank/WALL"]
+texture = ExtResource( 4 )
+vframes = 10
+hframes = 10
+frame = 31
+script = ExtResource( 5 )
+frames = [ 30, 31 ]
+rate = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="navdot_bank/WALL"]
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="navdot_bank/WALL"]
+position = Vector2( -1.733, 0 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="navdot_bank/WALL"]
+position = Vector2( 0, 1.733 )
+shape = SubResource( 4 )

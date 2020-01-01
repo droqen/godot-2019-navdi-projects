@@ -1,0 +1,127 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "ChoiceStack",
+"language": "GDScript",
+"path": "res://navdi/ChoiceStack.gd"
+}, {
+"base": "NavdiMazeNobody",
+"class": "House_Nobody",
+"language": "GDScript",
+"path": "res://05-houses/House_Nobody.gd"
+}, {
+"base": "Sprite",
+"class": "NavdiBitsySprite",
+"language": "GDScript",
+"path": "res://navdi/NavdiBitsySprite.gd"
+}, {
+"base": "RigidBody2D",
+"class": "NavdiMazeBody",
+"language": "GDScript",
+"path": "res://navdi/NavdiMazeBody.gd"
+}, {
+"base": "TileMap",
+"class": "NavdiMazeMaster",
+"language": "GDScript",
+"path": "res://navdi/NavdiMazeMaster.gd"
+}, {
+"base": "Node2D",
+"class": "NavdiMazeNobody",
+"language": "GDScript",
+"path": "res://navdi/NavdiMazeNobody.gd"
+}, {
+"base": "Node",
+"class": "NavdiXXI",
+"language": "GDScript",
+"path": "res://navdi/NavdiXXI.gd"
+} ]
+_global_script_class_icons={
+"ChoiceStack": "",
+"House_Nobody": "",
+"NavdiBitsySprite": "",
+"NavdiMazeBody": "",
+"NavdiMazeMaster": "",
+"NavdiMazeNobody": "",
+"NavdiXXI": ""
+}
+
+[application]
+
+config/name="Houses"
+run/main_scene="res://05-houses/Houses.tscn"
+boot_splash/image="res://03-broughplay/nine shrines cover.png"
+config/icon="res://icon.png"
+
+[autoload]
+
+NavdiAutoPixelPerfectViewport="*res://navdi/NavdiAutoPixelPerfectViewport.gd"
+
+[display]
+
+window/size/width=256
+window/size/height=192
+window/size/test_width=512
+window/size/test_height=384
+window/stretch/mode="viewport"
+
+[input]
+
+right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":15,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+lmb={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+rmb={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[network]
+
+limits/debugger_stdout/max_errors_per_frame=100
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+quality/2d/use_pixel_snap=true
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"
